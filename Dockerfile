@@ -4,7 +4,7 @@ ARG APP_PATH=/zuul
 ARG ENVIRONMENT
 
 RUN mkdir -p zuul
-COPY ./target/zuul.jar ${APP_PATH}/zuul.jar
+COPY ./target/zuul-0.0.1.jar ${APP_PATH}/zuul-0.0.1.jar
 COPY ./target/config/${ENVIRONMENT}/application.properties ${APP_PATH}/application.properties
 
 
