@@ -16,7 +16,7 @@ pipeline {
     stage('Docker Build') {
       agent any
       steps {
-        sh 'docker build -t roadtomoon/zuul-service:$ENVIRONMENT --build-arg ENVIRONMENT .'
+        sh 'docker build -t --build-arg $ENVIRONMENT roadtomoon/zuul-service:$ENVIRONMENT .'
       }
     }
     stage('Docker pull') {
