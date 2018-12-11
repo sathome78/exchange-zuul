@@ -5,7 +5,7 @@ ARG ENVIRONMENT
 
 RUN mkdir -p zuul
 COPY ./target/zuul-0.0.1.jar ${APP_PATH}/zuul-0.0.1.jar
-COPY ./target/config/${ENVIRONMENT}/aapplication.yml ${APP_PATH}/application.yml
+COPY ./target/config/${ENVIRONMENT}/application.yml ${APP_PATH}/application.yml
 
 
 ARG CONFIG_FILE_PATH="-Dspring.config.location="${ENVIRONMENT}"/application.yml"
