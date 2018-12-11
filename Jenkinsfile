@@ -1,21 +1,10 @@
 pipeline {
 
   agent any
-
-  stages {
-    stage('Maven Install') {
-      agent {
-        docker {
-          image 'maven:3.5.4'
-        }
-      }
-      steps {
-        sh 'mvn clean install'
-      }
-    }
-    stage('Docker Build') {
+    stage('Maven install & Docker Build') {
       agent any
       steps {
+        sh 'mvn clean install'
         sh 'docker build --build-arg ENVIRONMENT -t roadtomoon/zuul-service:$ENVIRONMENT .'
       }
     }
