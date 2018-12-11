@@ -1,6 +1,7 @@
 pipeline {
 
   agent any
+  stages {
     stage('Maven install & Docker Build') {
       agent any
       steps {
@@ -21,3 +22,4 @@ pipeline {
       }
     }
   }
+}
