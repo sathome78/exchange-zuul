@@ -9,4 +9,4 @@ COPY ./target/config/${ENVIRONMENT}/application.yml ${APP_PATH}/application.yml
 WORKDIR ${APP_PATH}
 RUN readlink -f application.yml
 EXPOSE 8080
-CMD java -jar zuul-0.0.1.jar CONFIG_FILE_PATH
+CMD java -jar zuul-0.0.1.jar
